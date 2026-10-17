@@ -1,0 +1,5 @@
+# Kaggle research dependencies; project extras supply pytest, Ruff and the ML stack.
+# Actual installed versions are captured in each run's provenance.
+datasets>=3.0,<5
+pyarrow>=18.0,<30
+scikit-learn>=1.4,<2

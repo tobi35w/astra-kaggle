@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Astra Research // Cyberdeck</title>
+    <link rel="stylesheet" href="/research.css">
+    <script defer src="/research.js"></script>
+  </head>
+  <body>
+    <header><a href="/">ASTRA <small>RESEARCH // CYBERDECK</small></a><span><i class="online-dot"></i> LOCAL · OFFLINE EVALUATION</span></header>
+    <main>
+      <section class="hero">
+        <p class="eyebrow">[ CURATED FOUR PAIR HISTORY · RESEARCH NODE 01 ]</p>
+        <h1>Training <span>&amp;</span> test results</h1>
+        <p>Backtests, chronological walk-forward folds, model training, and closed trades from quality-checked historical windows.</p>
+      </section>
+      <section id="progress" class="progress"><div id="progress-status">Loading research status…</div><button id="run-control" type="button" hidden></button></section>
+      <section class="notice"><strong><span class="signal-mark">◆</span> PROFITABILITY: UNPROVEN</strong><span>Historical results describe these windows only. BID candles use fixed spread and slippage assumptions.</span></section>
+      <nav class="tabs" role="tablist" aria-label="Research views">
+        <button class="tab" id="tab-pnl" type="button" role="tab" aria-selected="true" aria-controls="panel-pnl" data-panel="panel-pnl"><span>01</span> PROFIT / LOSS</button>
+        <button class="tab" id="tab-results" type="button" role="tab" aria-selected="false" aria-controls="panel-results" data-panel="panel-results"><span>02</span> TEST RESULTS</button>
+      </nav>
+      <section id="panel-pnl" class="tab-panel" role="tabpanel" aria-labelledby="tab-pnl">
+        <div class="panel-heading"><div><p class="eyebrow">LIVE LEDGER · REFRESHES AFTER SAVED TESTS</p><h2>Overall test P&amp;L</h2></div><span id="pnl-updated" class="timestamp">SYNCING…</span></div>
+        <div class="pnl-cards">
+          <article class="pnl-card"><small>GROSS PROFIT</small><b id="pnl-profit" class="positive">—</b><span>winning test outputs</span></article>
+          <article class="pnl-card"><small>GROSS LOSS</small><b id="pnl-loss" class="negative">—</b><span>losing test outputs</span></article>
+          <article class="pnl-card"><small>NET REPORTED</small><b id="pnl-net">—</b><span>sum of completed reports</span></article>
+          <article class="pnl-card"><small>TEST OUTPUTS</small><b id="pnl-count">0</b><span id="pnl-count-detail">awaiting first results</span></article>
+        </div>
+        <div class="table-wrap pnl-table"><table><thead><tr><th>Evaluation type</th><th>Reports</th><th>Metric samples</th><th>Gross profit</th><th>Gross loss</th><th>Net P&amp;L</th></tr></thead><tbody id="pnl-rows"></tbody></table></div>
+        <p class="pnl-caveat">Test types can cover overlapping dates, strategies, and candles. Their combined total is a research summary, not a single executable portfolio return. Values use the backtest’s configured price-value assumptions.</p>
+      </section>
+      <section id="panel-results" class="tab-panel" role="tabpanel" aria-labelledby="tab-results" hidden>
+        <section class="filters">
+          <label>PAIR<select id="pair"><option value="">All pairs</option></select></label>
+          <label>TIMEFRAME<select id="timeframe"><option value="">All timeframes</option></select></label>
+          <label>RESULT TYPE<select id="kind"><option value="">All results</option><option>BACKTEST</option><option>OOS_HOLDOUT</option><option>WALK_FORWARD</option><option>COST_STRESS</option><option>ML_TRAINING</option></select></label>
+          <span id="summary"></span>
+        </section>
+        <section class="table-wrap"><table><thead><tr><th>Type</th><th>Pair / timeframe</th><th>Window / strategy</th><th>Samples / trades</th><th>Net P&amp;L / status</th><th>Profit factor / folds</th><th></th></tr></thead><tbody id="rows"></tbody></table></section>
+      </section>
+      <section class="table-wrap"><table><thead><tr><th>Type</th><th>Pair / timeframe</th><th>Window / strategy</th><th>Samples / trades</th><th>Net P&amp;L / status</th><th>Profit factor / folds</th><th></th></tr></thead><tbody id="rows"></tbody></table></section>
+      <section class="limitations"><h2>Run assumptions</h2><div id="assumptions"></div><h2>Data and model limits</h2><ul id="limits"></ul></section>
+    </main>
+    <dialog id="detail"><form method="dialog"><button class="close" aria-label="Close">×</button></form><div id="detail-content"></div></dialog>
+  </body>
+</html>

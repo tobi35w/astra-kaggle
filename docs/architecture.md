@@ -1,0 +1,29 @@
+# Architecture
+
+The current project stage is [documented separately](project-status.md); the older [readiness checkpoint](pre-mt5-readiness-report.md) retains dated observations. Acquisition has an explicit trust boundary in `historical/dataset.py`: successful range validation and exact checksums are required before managed files reach research. Research CLI commands accept `--dataset-root` in place of a CSV to use this boundary. Content versions and canonical M1 hashes accompany `MarketData` and decision context. CLI/dashboard research rejects insufficient quality. `database_verification.py` checks hosted schema and an idempotent Journal round trip without applying migrations. The saved hosted check passed on 2026-10-11; migration history was not inspected. Four active pairs have 22 segmented historical windows. Subsequent strategy and ML campaigns have completed, including 792 curated H1/H4 runs; the baseline remains unqualified and the continuous four-pair archive remains incomplete.
+
+`progress_desk` serves the local Evaluation Desk and compact monitoring summaries. `project_status` derives conservative next-step guidance from internally reconciled saved reports; it cannot promote models or certify unseen data. `verification.SuiteRunner` serializes local offline verification with an OS file lock, writes lifecycle snapshots through a SQLite-backed Journal, and retains per-run logs, JUnit and coverage artifacts. Saved active research status is labelled unconfirmed or stale rather than treated as worker liveness.
+
+The existing module boundaries remain: `data/history` -> `indicators/market/intelligence` -> `strategies/arena` -> `decision` -> independent `risk` -> paper `execution/pipeline`. `repositories` defines the application journal; `adapters` supplies SQLite, PostgreSQL and Supabase transports. Business logic receives a `Journal` or repository through dependency injection. `database.py` retains legacy decision/performance repository APIs for compatibility; new workflows use the complete journal.
+
+## Availability and context
+
+Indicators use prefixes of the candle series. Candles are completed observations, and their timestamps determine availability. `decide` slices at decision time before validating/analyzing; MTF analysis independently slices each frame. Pivots carry confirmation indices (`pivot index + right bars`), never backdated availability. Fitness, trade outcomes, and model versions are retrieved only when available at the decision time. ML labels crossing a train/test boundary are purged.
+
+`MarketSnapshot` exposes trend, volatility, regime, evidence, uncertainty and regime confidence. Structure exposes high/low pivots, HH/HL/LH/LL/equal labels, directional structure, breaks, prior range boundaries, failed breakouts, pullbacks and clustered zones. MTF context identifies execution frame, lower setup, higher trend/structure/regime, agreement and conflicts. Missing, insufficient, mismatched and stale frames are explicit conflicts. H4 is normally higher trend/regime; H1 supplies higher structure; M15 supplies lower setup; execution defaults to M5.
+
+`Decision.context` is Astra's unified awareness record: health, configuration without secrets, risk state, market evidence, structure, session, candidate selection, causal performance history, optional MTF/model evidence and execution assumptions. The decision also carries the chosen signal, confidence, independent risk result, final action and NO TRADE reason codes. This is contextual software state, not consciousness.
+
+## Execution and persistence
+
+Research replay uses pending orders and next-candle fills. `AstraPaperPipeline.evaluate` retains the original immediate paper-close API: it assumes the supplied last close is an immediately executable paper quote. Use replay for next-open research. Position marking must occur after an immediate close entry; same-timestamp historical high/low cannot close it.
+
+Every executed candidate is risk-approved. Pending orders are rechecked with opening price and current portfolio state. Multiple positions are supported. Unknown cross-pair correlation is conservatively treated as correlated exposure. The paper ledger tracks realized balance and unrealized marked equity separately.
+
+The journal stores versioned JSON objects in an append-only relational envelope: entity, pair, timeframe, strategy, availability timestamp, correlation ID and UUID. Decision bundles and close bundles are atomic within each adapter. Decision observations persist the current candle and provenance, not a repeated copy of the full candle prefix. Pipeline persistence failure vetoes new execution. Local memory is for tests; SQLite is durable and the default. Supabase uses HTTPS PostgREST; PostgreSQL uses parameterized psycopg statements. Adapters expose sanitized errors, not connection strings or response bodies.
+
+Paper replay writes a complete checkpoint at its end. `PaperPortfolio.checkpoint(at)` and `PaperPortfolio.restore(journal, portfolio_id, as_of)` are explicit recovery APIs. Restore recreates state and counters without re-executing fills. Applications managing a long-running book should checkpoint at their chosen recovery boundaries. Process interruption between a fill event and the next checkpoint requires journal reconciliation; concurrent multi-writer portfolio coordination is not implemented.
+
+## Limits
+
+This is an offline research and paper implementation. It has no broker adapter, tick feed, live order path, autonomous scheduler, execution venue model, or guaranteed loss/profit outcome. The supported OHLC assumptions, heuristic regime/confidence/fitness rules, calendar simplifications, and data provenance requirements are documented separately. Hosted schema and Journal persistence were verified on 2026-10-11. No migration was applied, and migration-history state was not independently inspected.

@@ -1,0 +1,856 @@
+{
+  "files": [
+    {
+      "path": ".gitignore",
+      "sha256": "43b450e7642787a162846f50c73018fe2db5b284d77791c0b43069a9294a5959",
+      "size_bytes": 598
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "6282a54123d7c4fa23e0bbdebeff59a28a6175bfee5cac4d259491b01f4f6cba",
+      "size_bytes": 1406
+    },
+    {
+      "path": "README.md",
+      "sha256": "27ccbb1415644b112f631495a7a42e407ed9fc2779544f25f7c7dd483efa10ea",
+      "size_bytes": 12201
+    },
+    {
+      "path": "astra/__init__.py",
+      "sha256": "509ac2c7a432378295ebf26d122427600e5e56f649fafe1178c1a03761b0813d",
+      "size_bytes": 73
+    },
+    {
+      "path": "astra/__main__.py",
+      "sha256": "b85c7c268ccfcbdd8a3413860c016c5792d86bb9d0432a6886246c03f2e45b87",
+      "size_bytes": 12459
+    },
+    {
+      "path": "astra/adapters.py",
+      "sha256": "3fe64cf1ee49f20142f1f3b3768cf91c63aaaa3fd8f5fd3f9ea95da0187480fd",
+      "size_bytes": 11325
+    },
+    {
+      "path": "astra/ai.py",
+      "sha256": "be9afe58f2f001c37bd1a6229adf9367d92439baf8e305ca4382430dd731fcd4",
+      "size_bytes": 5602
+    },
+    {
+      "path": "astra/arena.py",
+      "sha256": "0d6a5153b4c786c70a9fcbb358d701765b945eef87e338fcb33aa9beeb3155f6",
+      "size_bytes": 6389
+    },
+    {
+      "path": "astra/backtest.py",
+      "sha256": "e5b1b2c95748ecc644df6d14a88b3235cfeba1a6406e043778ff13e81be4eb58",
+      "size_bytes": 17077
+    },
+    {
+      "path": "astra/config.py",
+      "sha256": "3ef0ad395361b5d31f67cd0bcedb73ec04fc0bbd7504afd716022315a08137b5",
+      "size_bytes": 7376
+    },
+    {
+      "path": "astra/data.py",
+      "sha256": "f52d83bb1830e658a419badff69dd4846ef6979773ce7a7a2de83ca2c2402bf7",
+      "size_bytes": 3253
+    },
+    {
+      "path": "astra/database.py",
+      "sha256": "bf332eeec242720db315f86baead619b08240813f4eba511d5bb192b37d60c2b",
+      "size_bytes": 3379
+    },
+    {
+      "path": "astra/database_verification.py",
+      "sha256": "fa75374c3811e155e9b0c6e6b01e20a18a93638eb2a952920a4e513bba3330cd",
+      "size_bytes": 7741
+    },
+    {
+      "path": "astra/decision.py",
+      "sha256": "eafb426a708f267fbd5d41ac2a69cf0ee5f2599ce0c2b3a384bfa91aab3907d6",
+      "size_bytes": 13225
+    },
+    {
+      "path": "astra/evidence.py",
+      "sha256": "73b23a85c5afa4d2418cace99b6dee55b59a150a2e26e4263679de2da60ca068",
+      "size_bytes": 5753
+    },
+    {
+      "path": "astra/execution.py",
+      "sha256": "984d5dddad54215dccdfcaf9ea433c67a7cd1c4941e04bc01ca37a5df526a19b",
+      "size_bytes": 24973
+    },
+    {
+      "path": "astra/exposure.py",
+      "sha256": "df9e66f57611416d77db2c957d77971381bcaa8eb1d7efe03653588377ba4f87",
+      "size_bytes": 1593
+    },
+    {
+      "path": "astra/health.py",
+      "sha256": "2f45d2899defb39f60879eafcced135e7f2ac80f2259806b8797e8008f5f9647",
+      "size_bytes": 1995
+    },
+    {
+      "path": "astra/historical/__init__.py",
+      "sha256": "96d0a37c8bd188a95272da140b6f450e3c52a2e09fbc05220a5f439ec3c101e9",
+      "size_bytes": 156
+    },
+    {
+      "path": "astra/historical/cli.py",
+      "sha256": "7281c4b314560c4184b8cbc278bd31cbbac78e489c559ab1d0eed078e67e904e",
+      "size_bytes": 12927
+    },
+    {
+      "path": "astra/historical/config.py",
+      "sha256": "0a145adf54429027b9c7ca6556eaf611e38878bdbe65a9942b4a35de83231dca",
+      "size_bytes": 6016
+    },
+    {
+      "path": "astra/historical/dataset.py",
+      "sha256": "423ad90cabfc7b5717fd49d16a3580f56c7358253c7b1fcdee77f25d5da99e7e",
+      "size_bytes": 5644
+    },
+    {
+      "path": "astra/historical/downloader.py",
+      "sha256": "54aec0d2039d7798054ce3174b3e468decddc69d9cc77cfeb3b720ed43780569",
+      "size_bytes": 18448
+    },
+    {
+      "path": "astra/historical/dukascopy.py",
+      "sha256": "33031779f4c71ac427927c4e8c5e1e78883a24c92bc19bc59b47bafe5b4bd6b0",
+      "size_bytes": 7941
+    },
+    {
+      "path": "astra/historical/dukascopy_node.py",
+      "sha256": "a5fa43d78b03d5ad38f6a7d69c279defcbb6b9ae9ca0626b0d35efe2f1441a55",
+      "size_bytes": 12911
+    },
+    {
+      "path": "astra/historical/importer.py",
+      "sha256": "541ec78eb8d699612ae06de4bffc181514079ef589506dfb587aaa63951e7377",
+      "size_bytes": 1987
+    },
+    {
+      "path": "astra/historical/json_source.py",
+      "sha256": "a78434bb7a34e6ad2bee5a38a93246450104bb10996ccf1d5b49c45cc7a7dbf2",
+      "size_bytes": 7856
+    },
+    {
+      "path": "astra/historical/manifest.py",
+      "sha256": "f705bba92c1cf2e8e8e7051a94683cb55cf9aa659ea1305eb3bc5e80ea795b12",
+      "size_bytes": 5820
+    },
+    {
+      "path": "astra/historical/models.py",
+      "sha256": "663a77e96f3e60f6771d444e7010e9fe5c76318250e6253286d0efd7bc398bb3",
+      "size_bytes": 2033
+    },
+    {
+      "path": "astra/historical/normalizer.py",
+      "sha256": "300b97c5cecda02987e3d03f395b208dde3f218f40efa418106328b873e9b880",
+      "size_bytes": 2662
+    },
+    {
+      "path": "astra/historical/pipeline.py",
+      "sha256": "3081084e929c5746ddf02be3e0cbd10537f19c999124bb0b4f1c982a72786d79",
+      "size_bytes": 13466
+    },
+    {
+      "path": "astra/historical/provider.py",
+      "sha256": "5c92f0aca9b1b7ed41e1d226d8b066ca52aa27a2835ef3001d1b7ff2491b2f4b",
+      "size_bytes": 923
+    },
+    {
+      "path": "astra/historical/qleap_source.py",
+      "sha256": "e0df1a0545727c66f1f324406705f7f5afca387f89667ff23deef8eb09f1f9ce",
+      "size_bytes": 8268
+    },
+    {
+      "path": "astra/historical/reconciliation.py",
+      "sha256": "8d2488b8d679d08ff4bf93b28629e7a8d64e5512255a100c199f61214d9f7e5b",
+      "size_bytes": 9895
+    },
+    {
+      "path": "astra/historical/resampler.py",
+      "sha256": "f364ad7cff623946b08e247be70465f83939057957e5d97fb2c78a9396cd37d9",
+      "size_bytes": 2038
+    },
+    {
+      "path": "astra/historical/validation.py",
+      "sha256": "56c71711d512ae0600df6177f4fac241d11b2c387418285283656b2fcae3f529",
+      "size_bytes": 7959
+    },
+    {
+      "path": "astra/historical/window.py",
+      "sha256": "d026398f20eaaa58f0f98e628a61b34a3933118a18bb3718a3689aa0fd9a1918",
+      "size_bytes": 1981
+    },
+    {
+      "path": "astra/history.py",
+      "sha256": "edf9e916318f9e20b5fba7f80ca3e6dee219e75186706a8ee2d11e5ef96db14f",
+      "size_bytes": 4725
+    },
+    {
+      "path": "astra/indicators.py",
+      "sha256": "0346a0f5c0e3e451519162f0bc6ed140411ea141fe53a915b83c245ed38f7a62",
+      "size_bytes": 6499
+    },
+    {
+      "path": "astra/integration.py",
+      "sha256": "bdf847f875da6bfb80e4bb4bfda6a939b51452d5c4a0352b34bf9f0973cb153b",
+      "size_bytes": 3527
+    },
+    {
+      "path": "astra/intelligence.py",
+      "sha256": "c5250253e17418126098b7aa1e25447ef55795d1e3befb1dabbf6e8495aaf262",
+      "size_bytes": 8491
+    },
+    {
+      "path": "astra/learning.py",
+      "sha256": "064cfe96f945e305f62746d431801167481e673eae832ce957c68b5f67aa96f1",
+      "size_bytes": 2633
+    },
+    {
+      "path": "astra/market.py",
+      "sha256": "37f90b89e9b3d9958021ab39ed3101eb41f3c9ad6ccf99d076422f2fc404b5fb",
+      "size_bytes": 13565
+    },
+    {
+      "path": "astra/memory.py",
+      "sha256": "3eade4e5a982e081747f06da446152eac191b375e3351265d9d6528d26600b89",
+      "size_bytes": 5083
+    },
+    {
+      "path": "astra/ml.py",
+      "sha256": "bceb55b6e4e67c7b8e6fd0c8aeecdf7e5ef00fd2a8964bbf645a4edfcacff866",
+      "size_bytes": 7544
+    },
+    {
+      "path": "astra/models.py",
+      "sha256": "eeb301569af858b8869cf7173de4c773f739be125b0dc252d6b395e4ab65b00a",
+      "size_bytes": 3952
+    },
+    {
+      "path": "astra/pipeline.py",
+      "sha256": "d9fdcb090a7c205fd25520b029c7d9af1e3cc41afdbc6f1d5e7ec92763a85485",
+      "size_bytes": 13686
+    },
+    {
+      "path": "astra/progress_desk.py",
+      "sha256": "fbbfb41328fd948ab5c8b21a4da2c6539f1dbb4c45707aed0584700e281473a1",
+      "size_bytes": 25883
+    },
+    {
+      "path": "astra/progress_desk_web/app.css",
+      "sha256": "c5180bc4eee5bc6a65c87be02c47c09a6ca81de7376f94bab65847862bd6dbe0",
+      "size_bytes": 22484
+    },
+    {
+      "path": "astra/progress_desk_web/app.js",
+      "sha256": "07263a88fb17b4c1b5e8496892fb399e28d8e990956e76a9bb12453c63f26765",
+      "size_bytes": 31869
+    },
+    {
+      "path": "astra/progress_desk_web/index.html",
+      "sha256": "6e541d13b703f3dc6e1f6c03a8124d6a271fe046cb7d772e43256728c83268ec",
+      "size_bytes": 13770
+    },
+    {
+      "path": "astra/project_status.py",
+      "sha256": "629ed1993499ca4332ec17d567e24029aea960a3e671a4c64a5d1e6cb27b6b28",
+      "size_bytes": 9004
+    },
+    {
+      "path": "astra/readiness.py",
+      "sha256": "b3f7e09bee25bec4c44427c99f3894c9f39347ed3d018342fc2f93180e41a8c0",
+      "size_bytes": 10776
+    },
+    {
+      "path": "astra/repositories.py",
+      "sha256": "d58f5c859597b553f7179c4fe53b578647daf0e65643be798821b82c38504b47",
+      "size_bytes": 6972
+    },
+    {
+      "path": "astra/research.py",
+      "sha256": "3f59859b63ee26b2e88dd5b4bea758429eed39d526768acf23eb9df1883fcc11",
+      "size_bytes": 7439
+    },
+    {
+      "path": "astra/risk.py",
+      "sha256": "04615cb905a6f5795ddfa958d053e7fb3564b928616ac5d4a8e078c6cffcd384",
+      "size_bytes": 5836
+    },
+    {
+      "path": "astra/robustness.py",
+      "sha256": "9baf500f2814ffe570a252c9451646b599e74717d7c1d3dfcb39ef3a06ca8d0e",
+      "size_bytes": 7615
+    },
+    {
+      "path": "astra/sandbox.py",
+      "sha256": "f6485e3043076bb9603127ab96a51ca1f2c42bc7ff2b2662da3fbec1faf92e59",
+      "size_bytes": 36023
+    },
+    {
+      "path": "astra/sandbox_web/app.js",
+      "sha256": "be00d489287897a30c6cf86afd02c266bb191429158a9881df7d6f80513ba376",
+      "size_bytes": 10425
+    },
+    {
+      "path": "astra/sandbox_web/index.html",
+      "sha256": "563d94def093058ca4daff51026eb3d730f714c7c51b101a6de1c830aeea8e8f",
+      "size_bytes": 5553
+    },
+    {
+      "path": "astra/sandbox_web/research.css",
+      "sha256": "80c27e1e505a3fcbff09f24b31f57f3387fff7871a55c4033a7b2f8f844e09f1",
+      "size_bytes": 8611
+    },
+    {
+      "path": "astra/sandbox_web/research.html",
+      "sha256": "98bca7aa88eaf958632a099eef2d7d78eed4ee09814084975d9fcf0d6f45fc40",
+      "size_bytes": 4570
+    },
+    {
+      "path": "astra/sandbox_web/research.js",
+      "sha256": "1980b349c865344a4dc964dce85c4fa7d55b5c237129aa3975d401a57a8f53bf",
+      "size_bytes": 11403
+    },
+    {
+      "path": "astra/sandbox_web/styles.css",
+      "sha256": "ba01eafede2924de5100266aad89826f87cfc9d43e556615063a18c13ef0b221",
+      "size_bytes": 10776
+    },
+    {
+      "path": "astra/strategies.py",
+      "sha256": "774f1d7b6f4cf99877f948746c0a23cd3946ae2ae826953fa63ade8565057a8d",
+      "size_bytes": 20074
+    },
+    {
+      "path": "astra/training_arena.py",
+      "sha256": "ffff82a3b8aa6cf7b01a111143a6aef3c09bd2cf1d1b29640b448615bb67b85c",
+      "size_bytes": 12938
+    },
+    {
+      "path": "astra/training_arena_web/app.css",
+      "sha256": "67afbc055a98c10ab54fd422fe512dd193a31f10743cf91d01d2676db539838b",
+      "size_bytes": 18342
+    },
+    {
+      "path": "astra/training_arena_web/app.js",
+      "sha256": "e54f5e729c9e2532d0c1e25671ea6d0f5f8c294a7d7ed7830c2b860526e16e78",
+      "size_bytes": 20654
+    },
+    {
+      "path": "astra/training_arena_web/index.html",
+      "sha256": "a229502ddffa761586aeb53503cbebdb2a3ff3824b68946f7564fc84efbc5664",
+      "size_bytes": 13817
+    },
+    {
+      "path": "astra/verification.py",
+      "sha256": "676149f89f26fa11c7e7fed3f473277a00e78dff7581dd62db2ecc47d674793c",
+      "size_bytes": 19889
+    },
+    {
+      "path": "astra/verification_process.py",
+      "sha256": "a66aee6700fce4b4c38c5da35289e4906253bfa762ccbb100d8de542ed84eae7",
+      "size_bytes": 3708
+    },
+    {
+      "path": "docs/ai_integration.md",
+      "sha256": "8edca1f7d6e02637f310f309f2f47fff6e4505b060c38d3b7df410c0c58b1baa",
+      "size_bytes": 1748
+    },
+    {
+      "path": "docs/architecture.md",
+      "sha256": "f37938429bed412748b64ec49b16dc8341c883eade03d5bc67b3ff412debae18",
+      "size_bytes": 5881
+    },
+    {
+      "path": "docs/backtesting.md",
+      "sha256": "882fd0242511c8f6dcc634f1c8be5d9ac938946db1be9c6e15349068604ee808",
+      "size_bytes": 5416
+    },
+    {
+      "path": "docs/configuration.md",
+      "sha256": "e839ac0dd2b3b834d064230aba97e5924223e0b6cc1c6d263f3060e91b956c60",
+      "size_bytes": 2426
+    },
+    {
+      "path": "docs/continuation-report.md",
+      "sha256": "b4cda42c9b40452ca6ecad1ed5cdcc78cd558955e776dcee5a699a6cf2d46d1d",
+      "size_bytes": 8750
+    },
+    {
+      "path": "docs/database.md",
+      "sha256": "8188023433c9b2baf1978db7263b014d2fb5391820a519493becaabc5922fdb9",
+      "size_bytes": 5626
+    },
+    {
+      "path": "docs/fresh-validation-plan.md",
+      "sha256": "22f088d306ac4118f8f09900dcc15a53eeb8876f495a54840a6d41788f2dc78a",
+      "size_bytes": 5760
+    },
+    {
+      "path": "docs/hf-forex-experiment.md",
+      "sha256": "59970acfe21c36fd8febc9893ec18447e4005dea259536fa19b7e891b4741891",
+      "size_bytes": 13799
+    },
+    {
+      "path": "docs/historical-acquisition-reliability-audit.md",
+      "sha256": "4cf9e35459dc687db77eab142e5f63406c1c47bf611b2d9f5862f2221ccf8a62",
+      "size_bytes": 3571
+    },
+    {
+      "path": "docs/historical-data-curation.md",
+      "sha256": "3ee1116411cafbd1655a977c802b63abe60926db95bac0bea59147517bfdede6",
+      "size_bytes": 8256
+    },
+    {
+      "path": "docs/historical_data.md",
+      "sha256": "d3aac0981c870578dc383faabaac18b13098981bc70e142396c5699f292f3848",
+      "size_bytes": 10206
+    },
+    {
+      "path": "docs/kaggle.md",
+      "sha256": "736ed4b1e3546c79478226a577bf70ac1cf31bea4c57c21a265638e16ba92143",
+      "size_bytes": 8045
+    },
+    {
+      "path": "docs/learning.md",
+      "sha256": "f785e22614dd8a46378f06e665ea74710e06f8efe8c7959959cd40d03754c990",
+      "size_bytes": 3853
+    },
+    {
+      "path": "docs/master-evolution-report.md",
+      "sha256": "c006e912a8133f6b22cb238819d97f2f2fb6e809eec8ee11e4c4764996b368b4",
+      "size_bytes": 14851
+    },
+    {
+      "path": "docs/pre-mt5-readiness-report.md",
+      "sha256": "a79c2f1f9b2ab0d98e1da47c81f3f9d249f9e1421045f22175c7656318eac235",
+      "size_bytes": 13143
+    },
+    {
+      "path": "docs/project-status.md",
+      "sha256": "78c385779db8d55336a1249efeca1a58127842abffc34e2e3e5232b367aee2be",
+      "size_bytes": 12179
+    },
+    {
+      "path": "docs/replacement-data-audit-20261015.md",
+      "sha256": "5fdd1d985e8d340f5b86da73b4f6a8f36a1b6420dc340d12257cb802ffadd324",
+      "size_bytes": 9728
+    },
+    {
+      "path": "docs/risk.md",
+      "sha256": "4b4647b0bd49560b427918ce317f454926fece79bef3f7d99f02a61f67705784",
+      "size_bytes": 2372
+    },
+    {
+      "path": "docs/strategies.md",
+      "sha256": "d3bf321940cc2ab5f44b6fcd986d032b18905e3fb1974850b4a48d0ad9a23769",
+      "size_bytes": 3355
+    },
+    {
+      "path": "kaggle/Astra_Research.ipynb",
+      "sha256": "e3796cc22ff049bb5d2ce37a2cd0629da92f13fd4299c32b0340df47882fbf01",
+      "size_bytes": 25141
+    },
+    {
+      "path": "kaggle/provenance/audit.json",
+      "sha256": "2baf73af3aea9087d4ce85206c9706f090bed137ca535aa4b02864a8009cc667",
+      "size_bytes": 8359
+    },
+    {
+      "path": "kaggle/provenance/audit.md",
+      "sha256": "e3ec6caf0725f3693c74ba8ef6b31cb8cbaca22110c9154220bbd2cb4834c9d0",
+      "size_bytes": 1495
+    },
+    {
+      "path": "kaggle/requirements.txt",
+      "sha256": "747084c81d5a12920cc7fb19be18be0d4373cf35cc16cb3fab02cfd44f22326b",
+      "size_bytes": 208
+    },
+    {
+      "path": "pyproject.toml",
+      "sha256": "168d6020ba78e2bfcfd20a0c1f14ff173bfd5fe285cc8e18b93cc5b623dfb5f3",
+      "size_bytes": 1324
+    },
+    {
+      "path": "scripts/analyze_curated_history_losses.py",
+      "sha256": "c9b78d70b7764c72c0dc13c2347cbbc6548e8c0fe1a76261557f66cad36574e6",
+      "size_bytes": 15015
+    },
+    {
+      "path": "scripts/audit_forexsb_source.py",
+      "sha256": "298a6240bb6b657bd687de8a02d0553ab1eb2ec27cdd00b9fd70d015a4511e52",
+      "size_bytes": 15199
+    },
+    {
+      "path": "scripts/audit_future_phase_fx_dataset.py",
+      "sha256": "1b0c2f87e665c41dc834910825cb43adc187cf19cee48f7032608168678b5140",
+      "size_bytes": 9798
+    },
+    {
+      "path": "scripts/audit_qleap_source.py",
+      "sha256": "7acf349646d1e98cb623ef7689eb3c909be05e28d3324ffcb0331f1090b1adcf",
+      "size_bytes": 4479
+    },
+    {
+      "path": "scripts/compare_fx_source_overlap.py",
+      "sha256": "5ba8ee574d3527937b702df2c4074d1b57322835042191ebe8dd159dd668ee6e",
+      "size_bytes": 6682
+    },
+    {
+      "path": "scripts/compare_hf_forex_continuity.py",
+      "sha256": "db672536a4f5926941ce9e071306fa4530030376a99133345d0fa72856ef0968",
+      "size_bytes": 16973
+    },
+    {
+      "path": "scripts/compare_hf_forex_models.py",
+      "sha256": "db0c01c0a01c6d13e9e370ee0a1a17121859f363a0a361eab725237291b8d6cb",
+      "size_bytes": 10824
+    },
+    {
+      "path": "scripts/curate_future_phase_fx_dataset.py",
+      "sha256": "9d22751c2d14c0440c2a15e1a31aed1f815f956acfb46a520ec6d6cb09b90993",
+      "size_bytes": 5564
+    },
+    {
+      "path": "scripts/download_continuous_tail.py",
+      "sha256": "51b5487609fa8bf293119db3d035a9ad7b92f6039a241ae9230792a5e79e491a",
+      "size_bytes": 11007
+    },
+    {
+      "path": "scripts/download_fx_hf_dataset.py",
+      "sha256": "fa0b082655473272ecf7cfd2a735dd2ac516a104e363fe1ffe58472f29a1a324",
+      "size_bytes": 3734
+    },
+    {
+      "path": "scripts/download_hf_forex_dataset.py",
+      "sha256": "c246935ce77dfec0a54ed28d80a4d4bcb5cd597e038cd2b4e730554305aa8b72",
+      "size_bytes": 2972
+    },
+    {
+      "path": "scripts/evaluate_curated_history.py",
+      "sha256": "ca76c5a952859cdd9de7b51c0bf41a7fb17e441325cc563eb7655a6b8f560fcf",
+      "size_bytes": 27379
+    },
+    {
+      "path": "scripts/evaluate_hf_profitability.py",
+      "sha256": "6b8a993a0c93eedbb1b2ad43cb5bd2ba9072f80d5bb3a65485ace3fa7e8ddac8",
+      "size_bytes": 22516
+    },
+    {
+      "path": "scripts/export_kaggle.py",
+      "sha256": "11c31108b98e1afaedef71f4970209fd9d832a040ee2fddf254ac3a7ed57776f",
+      "size_bytes": 11862
+    },
+    {
+      "path": "scripts/hf_forex_continuity.py",
+      "sha256": "41b299b66556868d65c0bc1048252b193fb64e236b8c2c3cb64ab905de5cf3a5",
+      "size_bytes": 14947
+    },
+    {
+      "path": "scripts/hf_profitability_replay.py",
+      "sha256": "4c9858a0de8cd48a18a6ba8033ef68610bc65f8d7f811f027789b7568fc91f8d",
+      "size_bytes": 20017
+    },
+    {
+      "path": "scripts/hf_profitability_statistics.py",
+      "sha256": "c2253c661f4d0f79426ad1662d6918d6fdb634161312700c3548bb5d0cf0d299",
+      "size_bytes": 6484
+    },
+    {
+      "path": "scripts/hf_source_clock.py",
+      "sha256": "ee6175ef37b1e461a57b0e0ceae5c8ae7deb5ea54d95d611848f1ba24e98f9f7",
+      "size_bytes": 1216
+    },
+    {
+      "path": "scripts/kaggle_run.py",
+      "sha256": "9822ea5284cff768d405c3147861c41a063579088735efe4713ac402dc7e8551",
+      "size_bytes": 15484
+    },
+    {
+      "path": "scripts/launch_progress_desk.py",
+      "sha256": "a2303f3e2ada59956be8b674a7c2c406b3ea54c7cc72d0d2c3e812b540972892",
+      "size_bytes": 2178
+    },
+    {
+      "path": "scripts/launch_research_sandbox.py",
+      "sha256": "49b88157d7eb9046cadaaa66c1c3f32c0b53c96352ad99a1b6f3edc3b944930e",
+      "size_bytes": 3510
+    },
+    {
+      "path": "scripts/launch_training_arena.py",
+      "sha256": "49a06fab5d09218d486384597f6462431a8946658231c2a15add3dc462772e0a",
+      "size_bytes": 2113
+    },
+    {
+      "path": "scripts/run_curated_history_phase.py",
+      "sha256": "1769542465dd0ef084be276346427adf0c8ec6be43233277828c604c8c2b4550",
+      "size_bytes": 22745
+    },
+    {
+      "path": "scripts/run_forward_paper_test.py",
+      "sha256": "d09db137695c188b876e689f6d0fd59c9b2dc4b4d25f0d9661b8054a80256712",
+      "size_bytes": 6046
+    },
+    {
+      "path": "scripts/run_training_arena_phase.py",
+      "sha256": "81636cb2328f25711591eedfc3d45d7818e0dbaf18c9dbd83a9916fce57e3088",
+      "size_bytes": 26856
+    },
+    {
+      "path": "scripts/sync_research_to_supabase.py",
+      "sha256": "aeb1c1bcb52464e6169e06dcee979405bcf78283567af42d08d7af0f385ded98",
+      "size_bytes": 10177
+    },
+    {
+      "path": "scripts/sync_training_arena_to_supabase.py",
+      "sha256": "228c582b8507cbb7616d6b647b616e25fc4a3c2e274e5c41ef0eee1558bf9f9c",
+      "size_bytes": 6260
+    },
+    {
+      "path": "scripts/train_hf_forex_experiment.py",
+      "sha256": "7aefe96a810bbfd4da2645cc1f1fb4785fd2a1eb81adbc96ead01df4320e2e54",
+      "size_bytes": 17128
+    },
+    {
+      "path": "scripts/train_models_experiment.py",
+      "sha256": "bedd44b595fe91bf0d665924cb83849e19dc007364b7cda870a3a7e42acfd2e5",
+      "size_bytes": 3894
+    },
+    {
+      "path": "tests/conftest.py",
+      "sha256": "5246684ff8d37c1af2c8fc3873b2343ce909de864c519a6cf7d09eedbe441154",
+      "size_bytes": 2408
+    },
+    {
+      "path": "tests/test_ai.py",
+      "sha256": "6299b7b4abe299249845b64c7e5bc058cc725bfea6085fd3e48347c7035f5191",
+      "size_bytes": 2438
+    },
+    {
+      "path": "tests/test_backtest.py",
+      "sha256": "fd6e4973054c6e8c8393e94136c1d7bd76232339a7cfd0034fccd3c6a4636605",
+      "size_bytes": 6549
+    },
+    {
+      "path": "tests/test_causality.py",
+      "sha256": "4dfca0bc605c91447870e1015a4f60269cc17590628bcc0b7c2299aad12c8cec",
+      "size_bytes": 5930
+    },
+    {
+      "path": "tests/test_continuous_acquisition.py",
+      "sha256": "5fe704bfc3f48038d08c9ae36da9e51f23b574cdeead7b58fa7c6eec1cf89737",
+      "size_bytes": 10561
+    },
+    {
+      "path": "tests/test_core.py",
+      "sha256": "94af24b857ff7beb16dcae45d9aeb930f9ba6219a383d26e0c5a6ff1f3bb3b3f",
+      "size_bytes": 7094
+    },
+    {
+      "path": "tests/test_coverage_gaps.py",
+      "sha256": "3b9b9565e9e9d7f3df8a93bb5a2a09b7b0cf6882749daa84e79fe24e1f97fc78",
+      "size_bytes": 45451
+    },
+    {
+      "path": "tests/test_curated_history_diagnostics.py",
+      "sha256": "a7803d5808cb408bc21a61c194a0c40a0ef1b3e8d5b6ac66fe1a2ee6df3f3e86",
+      "size_bytes": 1957
+    },
+    {
+      "path": "tests/test_curated_history_phase.py",
+      "sha256": "1553a688ef3ce5e0a2ce3df9d27c75f349aea2fa2b617486a250cd4b5346b709",
+      "size_bytes": 1451
+    },
+    {
+      "path": "tests/test_database_verification.py",
+      "sha256": "bf6c7caf0be5a407a7865f0abb4ddc3f57b4f6b18924226331aed3e96bb5187f",
+      "size_bytes": 3455
+    },
+    {
+      "path": "tests/test_desk_monitoring.py",
+      "sha256": "d5a7b6e097c1f7a507264f533f764f55f9c528f7559cf96ea87dbd380b6a10f2",
+      "size_bytes": 13908
+    },
+    {
+      "path": "tests/test_execution_safety.py",
+      "sha256": "ef1ee0f18f023a98bf1e10d74642331096f143ef67d682448c5560db76960548",
+      "size_bytes": 13652
+    },
+    {
+      "path": "tests/test_fail_closed.py",
+      "sha256": "4b16b736852779baeddc11e99cd326f3a0bf19cf0c20ac6f7dc6cebe5e4b3e0e",
+      "size_bytes": 8108
+    },
+    {
+      "path": "tests/test_forexsb_source_audit.py",
+      "sha256": "11df4b3aef38370406da3dd8e16f48f87db864dc231b507baa534c94e5cd427d",
+      "size_bytes": 8862
+    },
+    {
+      "path": "tests/test_forward_paper_test.py",
+      "sha256": "505bcf85603e24419045d80e1707497603f76100874b57b495e066c19361a0af",
+      "size_bytes": 3372
+    },
+    {
+      "path": "tests/test_hf_forex_continuity.py",
+      "sha256": "ba97046b8c5b20a36ab886e2adaaaca8b57b6a99a35944355419a5cdc34110b2",
+      "size_bytes": 12428
+    },
+    {
+      "path": "tests/test_hf_forex_continuity_comparison.py",
+      "sha256": "94fc9b5c80c45b990d77cb2943d2d3a2f9cc5b09cec52b41ee94920464d78420",
+      "size_bytes": 10114
+    },
+    {
+      "path": "tests/test_hf_forex_experiment.py",
+      "sha256": "ae7c573ed8b6ea72ce1457fe798d095058cc1248e5f13f47f188693f947c94f8",
+      "size_bytes": 10870
+    },
+    {
+      "path": "tests/test_hf_profitability_replay.py",
+      "sha256": "98dd4f5425008d1a008a1afc05d268509250fbaf1c14671af3a3acac656d13d0",
+      "size_bytes": 11375
+    },
+    {
+      "path": "tests/test_hf_profitability_runner.py",
+      "sha256": "80561cd0e26b9c997600f7191125316a87308d49305cf8049067231dfefb8083",
+      "size_bytes": 9822
+    },
+    {
+      "path": "tests/test_hf_profitability_statistics.py",
+      "sha256": "ec5fad3c5e1fd5cdbdae929b1c2ee83483d6026e12099fdff5e2c0df098f6cb2",
+      "size_bytes": 3604
+    },
+    {
+      "path": "tests/test_hf_source_clock.py",
+      "sha256": "9141be584f58bc15ae304f174b2330f0dd0f89aa25543f4836f467b1acbbabe3",
+      "size_bytes": 2369
+    },
+    {
+      "path": "tests/test_historical_engine.py",
+      "sha256": "fd5522014ef2d2863b238f180ab893f67ef259b2fc671cac96c3cbdc5ae59072",
+      "size_bytes": 24499
+    },
+    {
+      "path": "tests/test_historical_integrity.py",
+      "sha256": "2f61d10ab8b3d657cf2ebf03c44edcae88f03bca87148c23ac61ff8ace534eb3",
+      "size_bytes": 24410
+    },
+    {
+      "path": "tests/test_integration_gateway.py",
+      "sha256": "52af5f0a12ba1e5871efa9b645946631b1e45f47b446e98def86b0a96df8c5b8",
+      "size_bytes": 6530
+    },
+    {
+      "path": "tests/test_integration_readiness.py",
+      "sha256": "f026fcb28234adaea0d900aaa0e0f7c8bc58e5f97c4dc87cbf849905a65ad2e9",
+      "size_bytes": 6510
+    },
+    {
+      "path": "tests/test_intelligence.py",
+      "sha256": "17321f308f839fec7533fe86d371b564ab20a45c8bd3619a091080763c83146d",
+      "size_bytes": 11422
+    },
+    {
+      "path": "tests/test_kaggle_export.py",
+      "sha256": "43e8d67056f60a0965fb2724a6469e6a2feda000a707d2a0a566c6288f2e6ce4",
+      "size_bytes": 5260
+    },
+    {
+      "path": "tests/test_kaggle_run.py",
+      "sha256": "076653d0ba75143b78b0df2aecd9fefc24b4d5d06b8a51c0e59e46fe55e3d867",
+      "size_bytes": 9525
+    },
+    {
+      "path": "tests/test_live_integrations.py",
+      "sha256": "aa20bc38620403a5db5e0caf1d3ac6ec73688a36a2f0da008672b4f93cf1f0b9",
+      "size_bytes": 830
+    },
+    {
+      "path": "tests/test_ml_experiment.py",
+      "sha256": "dd090902bd55e732bd7e92b74bcd2e05ff2a4ebb9065680d46858ff49b89b385",
+      "size_bytes": 4573
+    },
+    {
+      "path": "tests/test_persistence.py",
+      "sha256": "75f8b8ea7604e13a01060fb020e498b90edcd9a1d3baf255f86b21c061a4944d",
+      "size_bytes": 10843
+    },
+    {
+      "path": "tests/test_progress_desk.py",
+      "sha256": "06a5481ae6a60ba0bfc3f38d104c490e2fea29584a9276a181c2824561340296",
+      "size_bytes": 10763
+    },
+    {
+      "path": "tests/test_progress_launcher.py",
+      "sha256": "350a8f238cc1b25dba867f8ecbdde54e889cb9e6cd07a0d4a916ac25709e95bd",
+      "size_bytes": 1608
+    },
+    {
+      "path": "tests/test_project_status.py",
+      "sha256": "021b8f9770b5fad0b6f89d97bf869f9680468aa840bc63d8878add8d90c0bf27",
+      "size_bytes": 3774
+    },
+    {
+      "path": "tests/test_qleap_source.py",
+      "sha256": "b375ec66972f0a214bbcd78d1f04246e8a5b58cd1299b6e99520038a17d54597",
+      "size_bytes": 5858
+    },
+    {
+      "path": "tests/test_remaining_coverage.py",
+      "sha256": "0167b5a60e8da5a1e65975090a2667d7dfb48eefe850e076e0d5f865dd38cf48",
+      "size_bytes": 20528
+    },
+    {
+      "path": "tests/test_research_campaign.py",
+      "sha256": "f5a12c387c8632fd76ad09089f762fe56c9ad1bfa2f814db88d42919a0522eed",
+      "size_bytes": 7823
+    },
+    {
+      "path": "tests/test_research_cli.py",
+      "sha256": "5d54b5934c6990a6e968e07c658b5fd0e4ac43a2990c6e8ac7aeb46013bbbc11",
+      "size_bytes": 21390
+    },
+    {
+      "path": "tests/test_research_evaluation.py",
+      "sha256": "b81fa41c74865274f5b178921d0b51ec7628f35d77182bc93e1ff3191ad58b3f",
+      "size_bytes": 2219
+    },
+    {
+      "path": "tests/test_research_launcher.py",
+      "sha256": "8d3d4b8d3eec12a3bebfe1be6231d019f2a62f26ebef86a5951abc798c644a59",
+      "size_bytes": 1261
+    },
+    {
+      "path": "tests/test_sandbox.py",
+      "sha256": "1d3d44fe957a35b1f7651d362d03379ea9a1557a4f8f98e32be2d33ce95f98c4",
+      "size_bytes": 25863
+    },
+    {
+      "path": "tests/test_strategy_families.py",
+      "sha256": "4168a9d81a1a44cceedaed4c9908f848b1ea0acfb3e82471685dcf317f376d8b",
+      "size_bytes": 9759
+    },
+    {
+      "path": "tests/test_training_arena.py",
+      "sha256": "a402a82da899e338569fe33a1d07ef6ae542f205a518811d0d654ec2d7894598",
+      "size_bytes": 10258
+    },
+    {
+      "path": "tests/test_training_arena_state.py",
+      "sha256": "1cddfaee50f370c742834f0792e256b2f3ca7e748f00b7a774fdfefeae957597",
+      "size_bytes": 1177
+    },
+    {
+      "path": "tests/test_verification_runner.py",
+      "sha256": "b2b538d2e549112336eed7650adabb2a26037b6d370d85cd7c80f447a61eabac",
+      "size_bytes": 14360
+    }
+  ],
+  "purpose": "Source-only Kaggle research; no market cache or local results included",
+  "schema": "astra.kaggle.export.v1"
+}

@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1110">
+  <title>Astra · Evaluation Desk</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Astra Evaluation Desk overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><b>ASTRA</b><small>EVALUATION DESK</small></span>
+      </a>
+      <p class="side-label">WORKSPACE</p>
+      <nav class="nav" aria-label="Evaluation views">
+        <a class="nav-item active" href="#overview" data-view="overview" aria-current="page"><span aria-hidden="true">◈</span> Overview</a>
+        <a class="nav-item" href="#tests" data-view="tests"><span aria-hidden="true">✓</span> Software tests <i id="testNavDot" class="nav-dot" hidden></i></a>
+        <a class="nav-item" href="#research" data-view="research"><span aria-hidden="true">▤</span> Historical research</a>
+        <a class="nav-item" href="#training" data-view="training"><span aria-hidden="true">▥</span> Training & validation</a>
+        <a class="nav-item" href="#data" data-view="data"><span aria-hidden="true">⇩</span> Data quality</a>
+        <a class="nav-item" href="#paper" data-view="paper"><span aria-hidden="true">↗</span> Paper replay</a>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="workspace-links">
+        <p class="side-label">YOUR OTHER WORKSPACES</p>
+        <a href="http://127.0.0.1:8788/" target="_blank" rel="noopener noreferrer">Training Arena <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a>
+        <a href="http://127.0.0.1:8787/research" target="_blank" rel="noopener noreferrer">Research Sandbox <span aria-hidden="true">↗</span><span class="sr-only"> (opens a new tab)</span></a>
+        <small>Open each app when its local server is running.</small>
+      </div>
+      <div class="scope-note"><span class="scope-icon" aria-hidden="true">◇</span><div><b>Research & paper only</b><small>Every candidate goes through risk.</small></div></div>
+      <div class="side-footer">LOCAL WORKSPACE <span>v1</span></div>
+    </aside>
+    <main class="main" id="main" tabindex="-1">
+      <header class="topbar">
+        <div><div class="eyebrow">ASTRA / <span id="breadcrumb">OVERVIEW</span></div><h1 id="pageTitle">Evaluation overview</h1><p id="pageDescription">One place to follow the tests, the evidence, and what comes next.</p></div>
+        <div class="top-actions"><div class="connection-pill" id="connectionPill"><i aria-hidden="true"></i><span id="connectionState" role="status">Connecting</span></div><button class="icon-button" id="refreshBtn" type="button" title="Refresh evidence now" aria-label="Refresh evidence now">↻</button></div>
+      </header>
+      <div class="error-banner" id="connectionError" role="alert" hidden></div>
+      <div class="action-notice" id="actionNotice" role="status" hidden></div>
+      <div class="desk-toolbar"><span id="syncStamp">Waiting for local evidence…</span><button class="button primary" type="button" data-run-tests disabled><span aria-hidden="true">▷</span> Run software checks</button></div>
+      <section class="view active" id="view-overview" aria-label="Evaluation overview">
+        <article class="stage-card">
+          <div class="stage-copy"><div class="eyebrow"><span class="stage-dot" aria-hidden="true"></span> CURRENT DEVELOPMENT STAGE</div><h2 id="stageTitle">Reading your project evidence</h2><p id="stageSummary">The desk is loading saved evaluations and the current software verification run.</p><div class="stage-tags"><span class="badge neutral" id="stageLabel">Loading</span><span class="badge amber" id="profitabilityTag">Profitability unproven</span></div></div>
+          <div class="stage-next"><span class="eyebrow">RECOMMENDED NEXT STEP</span><h3 id="nextAction">Waiting for the evidence assessment</h3><p>Progress is measured by verified results.</p><a href="#training" class="text-link">Explore validation evidence <span aria-hidden="true">→</span></a></div>
+        </article>
+        <div class="section-heading"><h2>At a glance</h2><span>Software checks + saved research evidence</span></div>
+        <div class="evidence-grid" id="overviewCards" aria-busy="true"><article class="evidence-card placeholder"><span class="eyebrow">LOADING EVIDENCE</span><h3>Connecting to Astra</h3><p>Results will appear here when the local desk responds.</p></article></div>
+        <div class="overview-bottom">
+          <article class="panel"><div class="panel-heading"><div><span class="eyebrow">THE PATH FORWARD</span><h2>Next decisions</h2></div><span class="small-label">In order</span></div><ol class="next-steps" id="nextSteps"><li class="empty-state">The assessment is loading.</li></ol></article>
+          <article class="panel"><div class="panel-heading"><div><span class="eyebrow">EVIDENCE CHECKPOINTS</span><h2>Readiness, with context</h2></div></div><div class="gate-list" id="evidenceGates"><p class="empty-state">Checkpoints appear after evidence is loaded.</p></div></article>
+        </div>
+        <div class="note" id="assessmentWarnings" hidden></div>
+      </section>
+      <section class="view" id="view-tests" aria-label="Software tests" hidden>
+        <div class="metric-grid four" id="testMetrics"></div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">VERIFICATION PIPELINE</span><h2 id="testRunHeading">Ready when you are</h2></div><span class="badge neutral" id="testRunBadge">Not started</span></div><div class="phase-list" id="testPhases"></div><p class="caption" id="testTiming">Run software checks to execute pytest with coverage, Ruff lint, and Ruff format checks.</p></article>
+        <article class="panel log-panel"><div class="panel-heading"><div><span class="eyebrow">RUN OUTPUT</span><h2>Console</h2></div><label class="follow-label"><input id="followLog" type="checkbox" checked> Follow output</label></div><pre class="log-box" id="testLog" tabindex="0" aria-label="Software verification output">No run recorded. Select “Run software checks” to begin.</pre><div class="log-footer"><span id="testLogMeta">Waiting for a run</span><span>Most recent output · refreshes automatically</span></div></article>
+        <article class="panel table-panel"><div class="panel-heading"><div><span class="eyebrow">SAVED VERIFICATION</span><h2>Recent runs</h2></div><span class="small-label">Latest 10</span></div><div class="table-scroll"><table><caption class="sr-only">Recent software verification runs</caption><thead><tr><th>Started</th><th>Result</th><th>Tests</th><th>Coverage</th><th>Finished</th></tr></thead><tbody id="testHistoryBody"><tr><td colspan="5" class="empty-state">No saved runs yet.</td></tr></tbody></table></div></article>
+      </section>
+      <section class="view" id="view-research" aria-label="Historical research" hidden>
+        <div class="section-intro"><div><h2>Historical strategy evaluation</h2><p>Recorded backtests, chronological validation, and cost stress experiments.</p></div><a class="button secondary" href="http://127.0.0.1:8787/research" target="_blank" rel="noopener noreferrer">Open Research Sandbox ↗<span class="sr-only"> (opens a new tab)</span></a></div>
+        <div class="metric-grid four" id="researchMetrics"></div>
+        <article class="panel"><div class="panel-heading"><h2>Research campaign</h2><span class="badge neutral" id="researchBadge">No evidence</span></div><div id="researchProgress"></div><div class="chip-row" id="researchKinds"></div><p class="caption" id="researchFreshness"></p><div class="note" id="researchNote"></div></article>
+        <article class="panel"><div class="panel-heading"><h2>How to read these results</h2></div><p class="body-copy">A completed experiment confirms that an evaluation ran. Candidate quality still depends on sufficient trades, chronological validation, realistic costs, and repeatable results on unseen data.</p><ul class="limitation-list" id="researchLimitations"></ul></article>
+      </section>
+      <section class="view" id="view-training" aria-label="Training and validation" hidden>
+        <div class="section-intro"><div><h2>From training to evidence</h2><p>Follow the saved Training Arena results and the broader curated validation baseline.</p></div><a class="button secondary" href="http://127.0.0.1:8788/" target="_blank" rel="noopener noreferrer">Open Training Arena ↗<span class="sr-only"> (opens a new tab)</span></a></div>
+        <div class="training-grid">
+          <article class="panel"><div class="panel-heading"><div><span class="eyebrow">TRAINING ARENA</span><h2>Candidate experiments</h2></div><span class="badge neutral" id="trainingBadge">No evidence</span></div><div id="trainingProgress"></div><div class="mini-metrics" id="trainingMetrics"></div><p class="caption" id="trainingFreshness"></p><div class="note" id="trainingNote"></div></article>
+          <article class="panel"><div class="panel-heading"><div><span class="eyebrow">CURATED HISTORY</span><h2>Validation baseline</h2></div><span class="badge neutral" id="curatedBadge">No evidence</span></div><div id="curatedProgress"></div><div class="mini-metrics" id="curatedMetrics"></div><p class="caption" id="curatedFreshness"></p><div class="note" id="curatedNote"></div></article>
+        </div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">COST SENSITIVITY</span><h2>Results across independent windows</h2></div><span class="small-label">Mean return per test</span></div><div class="scenario-grid" id="scenarioCards"></div><p class="caption" id="scenarioUnits">Returns across independent historical windows are research comparisons.</p></article>
+        <article class="panel table-panel"><div class="panel-heading"><div><span class="eyebrow">VALIDATION BREAKDOWN</span><h2>Strategy, pair & timeframe</h2></div><label class="select-label">Costs <select id="scenarioFilter"><option value="base">Base costs</option><option value="double_cost">Doubled costs</option><option value="all">All scenarios</option></select></label></div><div class="table-scroll"><table><caption class="sr-only">Curated validation results grouped by strategy, pair, timeframe and costs</caption><thead><tr><th>Strategy</th><th>Pair</th><th>Timeframe</th><th>Costs</th><th>Positive windows</th><th>Median return</th><th>Closed trades</th></tr></thead><tbody id="curatedBody"><tr><td colspan="7" class="empty-state">No grouped validation results recorded.</td></tr></tbody></table></div></article>
+        <article class="panel"><div class="panel-heading"><h2>Validation limitations</h2></div><ul class="limitation-list" id="trainingLimitations"></ul></article>
+      </section>
+      <section class="view" id="view-data" aria-label="Data quality" hidden>
+        <div class="section-intro"><div><h2>The data behind each test</h2><p>Acquisition records and independent source audits, with their last recorded update.</p></div><span class="badge neutral">Saved artifacts</span></div>
+        <div class="metric-grid three" id="acquisitionMetrics"></div>
+        <article class="panel table-panel"><div class="panel-heading"><div><span class="eyebrow">HISTORICAL DATA ACQUISITION</span><h2>Dukascopy archive tail</h2></div><span class="badge neutral" id="acquisitionBadge">No evidence</span></div><p class="caption" id="acquisitionFreshness"></p><div class="table-scroll"><table><caption class="sr-only">Historical acquisition records by currency pair</caption><thead><tr><th>Pair</th><th>Downloaded units</th><th>Failed units</th><th>Other records</th><th>Latest downloaded day</th></tr></thead><tbody id="acquisitionBody"><tr><td colspan="5" class="empty-state">No acquisition records found.</td></tr></tbody></table></div><div class="note" id="acquisitionNote"></div></article>
+        <article class="panel table-panel"><div class="panel-heading"><div><span class="eyebrow">INDEPENDENT SOURCE AUDIT</span><h2>qleap snapshot</h2></div><span class="small-label" id="qleapAudited">No audit recorded</span></div><div class="table-scroll"><table><caption class="sr-only">Independent qleap source audit</caption><thead><tr><th>Pair</th><th>Rows</th><th>Date range</th><th>Structural checks</th><th>Closed-session bars</th></tr></thead><tbody id="qleapBody"><tr><td colspan="5" class="empty-state">No source audit found.</td></tr></tbody></table></div><div class="note" id="qleapVerdict"></div></article>
+      </section>
+      <section class="view" id="view-paper" aria-label="Historical paper replay" hidden>
+        <div class="section-intro"><div><h2>Historical paper replay</h2><p>A finite rehearsal on recorded prices, using the paper execution provider.</p></div><span class="badge neutral">Historical replay</span></div>
+        <div class="metric-grid four" id="rehearsalMetrics"></div>
+        <article class="panel"><div class="panel-heading"><div><span class="eyebrow">REPLAY RECORD</span><h2 id="rehearsalDataset">No replay recorded</h2></div></div><div class="detail-grid" id="rehearsalDetails"></div><p class="caption" id="rehearsalUpdated"></p><div class="note" id="rehearsalCaveat">Forward paper observation requires a separate, continuously updated record.</div></article>
+      </section>
+      <footer class="main-footer"><span>Astra Evaluation Desk</span><span>Research figures describe historical evidence. All timestamps use your browser’s local time.</span></footer>
+    </main>
+  </div>
+  <script src="/app.js"></script>
+</body>
+</html>

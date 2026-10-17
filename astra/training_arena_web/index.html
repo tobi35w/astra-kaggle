@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#07120f">
+  <title>Astra Training Arena</title>
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <div class="ambient ambient-a"></div><div class="ambient ambient-b"></div>
+  <div class="shell">
+    <aside class="sidebar">
+      <a class="brand" href="#overview" aria-label="Astra Training Arena home">
+        <span class="brand-mark"><i></i><i></i><i></i></span>
+        <span><b>ASTRA</b><small>TRAINING ARENA</small></span>
+      </a>
+      <div class="side-label">COMMAND DECK</div>
+      <nav class="nav">
+        <button class="nav-item active" data-view="overview"><span>◈</span> Arena overview</button>
+        <button class="nav-item" data-view="accounts"><span>▣</span> Test accounts</button>
+        <button class="nav-item" data-view="trades"><span>↗</span> Trade log <em id="tradeCountNav">0</em></button>
+        <button class="nav-item" data-view="models"><span>⌘</span> Model lab</button>
+        <button class="nav-item" data-view="evidence"><span>◌</span> Data & evidence</button>
+      </nav>
+      <div class="sidebar-spacer"></div>
+      <div class="level-card">
+        <div class="level-top"><span>ARENA RANK</span><span id="levelLabel">LEVEL 01</span></div>
+        <b id="rankName">Signal Scout</b>
+        <div class="xp-track"><i id="xpBar"></i></div>
+        <small id="xpText">0 / 5 completed test accounts</small>
+      </div>
+      <div class="side-footer"><span class="pulse-dot"></span> LOCAL · OFFLINE READY</div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <div><div class="eyebrow">ASTRA // PAPER RESEARCH DIVISION</div><h1 id="pageTitle">Training Arena</h1></div>
+        <div class="top-actions">
+          <div class="connection-pill"><span class="pulse-dot"></span><span id="connectionState">CONNECTING</span></div>
+          <button class="icon-button" id="refreshBtn" title="Refresh status">⟳</button>
+          <div class="avatar">A</div>
+        </div>
+      </header>
+
+      <section class="status-ribbon">
+        <div class="status-left"><span class="status-icon">✦</span><div><b id="phaseHeadline">PREPARING YOUR NEXT RUN</b><small id="phaseSubline">Waiting for the current Research Sandbox evaluation to finish</small></div></div>
+        <div class="status-right"><div class="phase-step"><i class="done"></i><span>RESEARCH</span></div><div class="phase-line"></div><div class="phase-step"><i id="phaseStepDot"></i><span>TRAINING ARENA</span></div><button class="action-button compact" id="pauseBtn" disabled>Ⅱ &nbsp; PAUSE</button></div>
+      </section>
+
+      <section class="view active" id="view-overview">
+        <div class="welcome-row"><div><h2>Run the tape. Build the evidence.</h2><p>Chronological model training and paper-trade simulations from Astra’s saved four-pair dataset.</p></div><div class="offline-tag"><span class="pulse-dot"></span> NO BROKER · NO INTERNET REQUIRED</div></div>
+        <div class="metric-grid">
+          <article class="metric-card hero-metric"><div class="metric-head"><span>COMBINED TEST EQUITY</span><span class="tag">SIMULATED</span></div><div class="metric-number" id="combinedEquity">$0.00</div><div class="metric-foot"><span id="aggregateBalance">$0 test capital</span><span class="muted">across separate accounts</span></div><div class="sparkline-wrap"><canvas id="equityChart" height="62"></canvas></div></article>
+          <article class="metric-card"><div class="metric-head"><span>NET P&amp;L</span><span class="metric-icon mint">↗</span></div><div class="metric-number" id="netPnl">$0.00</div><div class="metric-foot"><span class="muted">Completed OOS simulations</span></div></article>
+          <article class="metric-card"><div class="metric-head"><span>PAPER TRADES</span><span class="metric-icon gold">⌁</span></div><div class="metric-number" id="paperTrades">0</div><div class="metric-foot"><span id="winLoss">0 wins · 0 losses</span></div></article>
+          <article class="metric-card"><div class="metric-head"><span>MODEL VALIDATION</span><span class="metric-icon violet">⌘</span></div><div class="metric-number" id="modelsReady">0<span class="unit"> / 20</span></div><div class="metric-foot"><span id="modelStatus">Chronological, purged split</span></div></article>
+        </div>
+
+        <article class="panel" id="curatedHistoryPanel" hidden style="margin-top:14px">
+          <div class="panel-heading"><div><div class="eyebrow">VERIFIED HISTORICAL FOLLOW-UP</div><h3>Four-pair H1 / H4 holdout</h3></div><span class="live-badge"><i></i><span id="curatedHistoryStatus">NOT STARTED</span></span></div>
+          <div class="progress-meta"><span id="curatedHistoryProgress">0 / 0 evaluations</span><span id="curatedHistoryPercent">0%</span></div>
+          <div class="progress-track"><i id="curatedHistoryProgressBar"></i></div>
+          <div class="feed-stage" id="curatedHistoryStage">Only curated, quality-passed windows are included.</div>
+          <div class="muted" id="curatedHistoryLatest" style="margin-top:10px;font:10px var(--mono)"></div>
+        </article>
+
+        <div class="content-grid">
+          <article class="panel live-panel">
+            <div class="panel-heading"><div><div class="eyebrow">REPLAY CONTROL</div><h3>Live test feed</h3></div><span class="live-badge"><i></i><span id="liveBadge">STANDBY</span></span></div>
+            <div class="feed-test"><div class="feed-identity"><span class="pair-chip" id="activePair">—</span><span id="activeTestName">Waiting on Research completion</span></div><div class="feed-stage" id="activeStage">The arena will automatically unlock when the current evaluation is complete.</div></div>
+            <div class="progress-meta"><span id="testProgressText">0 / 68 test accounts</span><span id="testPercent">0%</span></div><div class="progress-track"><i id="testProgressBar"></i></div>
+            <div class="live-stats"><div><small>REPLAY BARS</small><b id="barProgress">—</b></div><div><small>ACCOUNT BALANCE</small><b id="activeBalance">—</b></div><div><small>CLOSED TRADES</small><b id="activeTrades">—</b></div><div><small>OPEN POSITIONS</small><b id="openPositions">0</b></div></div>
+            <div class="position-strip" id="positionStrip"><span class="muted">No simulated positions open</span></div>
+          </article>
+          <article class="panel quick-panel"><div class="panel-heading"><div><div class="eyebrow">CAMPAIGN MAP</div><h3>Training sequence</h3></div><span class="map-icon">⌬</span></div>
+            <div class="sequence"><div class="sequence-item"><span class="sequence-node complete">✓</span><div><b>Prior evaluation memory</b><small id="priorEvaluation">Waiting for Research Sandbox</small></div><span class="sequence-state">LINKED</span></div><div class="sequence-item"><span class="sequence-node" id="datasetNode">2</span><div><b>Curated FX dataset</b><small id="datasetSummary">Checking local files…</small></div><span class="sequence-state" id="datasetState">LOCAL</span></div><div class="sequence-item"><span class="sequence-node" id="modelNode">3</span><div><b>Train &amp; validate models</b><small>4 pairs · M1, M5, M15, H1, H4</small></div><span class="sequence-state" id="modelSequenceState">QUEUED</span></div><div class="sequence-item"><span class="sequence-node" id="simNode">4</span><div><b>Paper-trade OOS replay</b><small>Risk-gated · next-bar execution</small></div><span class="sequence-state" id="simSequenceState">QUEUED</span></div></div>
+            <div class="run-note"><span>✧</span><p>Each test has its own <b>$10,000</b> paper account. The total P&amp;L sums independent tests; it is not a single combined portfolio.</p></div>
+          </article>
+        </div>
+
+        <div class="section-heading"><div><div class="eyebrow">RECENT SIMULATED ACTIVITY</div><h3>Latest closed trades</h3></div><button class="text-button" data-jump="trades">View trade log <span>→</span></button></div>
+        <article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>PAIR / FRAME</th><th>MODEL / STRATEGY</th><th>SIDE</th><th>ENTRY</th><th>EXIT</th><th>RESULT</th><th>EXIT TIME</th><th></th></tr></thead><tbody id="recentTrades"><tr><td colspan="8" class="empty-state">The first OOS trade will appear here when the arena starts.</td></tr></tbody></table></div></article>
+      </section>
+
+      <section class="view" id="view-accounts"><div class="view-intro"><div><div class="eyebrow">ONE LEDGER PER TEST</div><h2>Test accounts</h2><p>Every pair, timeframe, and strategy has an isolated starting balance and risk ledger.</p></div><div class="account-total" id="accountsCount">0 ACCOUNTS</div></div><div class="account-grid" id="accountGrid"><div class="empty-card">Accounts will populate as each out-of-sample simulation completes.</div></div></section>
+
+      <section class="view" id="view-trades"><div class="view-intro"><div><div class="eyebrow">PAPER EXECUTION RECORD</div><h2>Trade log</h2><p>Fills use the saved OHLC history, configured spread/slippage assumptions, and Astra’s risk gate.</p></div><div class="account-total">PAPER ONLY</div></div><div class="filter-row"><select id="pairFilter"><option value="">All pairs</option><option>AUDUSD</option><option>EURUSD</option><option>GBPUSD</option><option>USDJPY</option></select><select id="timeframeFilter"><option value="">All timeframes</option><option>M1</option><option>M5</option><option>M15</option><option>H1</option><option>H4</option></select><span class="muted" id="tradeRowsCount">0 trades</span></div><article class="panel table-panel"><div class="table-scroll"><table><thead><tr><th>PAIR</th><th>FRAME</th><th>STRATEGY</th><th>SIDE</th><th>SIZE (UNITS)</th><th>ENTRY</th><th>STOP</th><th>TARGET</th><th>EXIT</th><th>P&amp;L</th><th>R</th><th>EXIT REASON</th><th>CLOSED (UTC)</th><th></th></tr></thead><tbody id="allTrades"><tr><td colspan="14" class="empty-state">No trades recorded yet.</td></tr></tbody></table></div></article></section>
+
+      <section class="view" id="view-models"><div class="view-intro"><div><div class="eyebrow">CAUSAL MACHINE LEARNING</div><h2>Model lab</h2><p>Deterministic logistic models. Training labels are purged at chronological boundaries; paper replay begins after the model’s validation/training window.</p></div><div class="account-total">NO SHUFFLED SPLITS</div></div><div class="model-summary metric-grid"><article class="metric-card"><div class="metric-head"><span>MODELS TRAINED</span><span class="metric-icon violet">⌘</span></div><div class="metric-number" id="modelCount">0 / 20</div></article><article class="metric-card"><div class="metric-head"><span>MEAN HOLDOUT ACCURACY</span><span class="metric-icon mint">◉</span></div><div class="metric-number" id="meanAccuracy">—</div></article><article class="metric-card"><div class="metric-head"><span>MEAN BRIER SCORE</span><span class="metric-icon gold">⌖</span></div><div class="metric-number" id="meanBrier">—</div><div class="metric-foot"><span class="muted">Lower is better; 0.25 is an unskilled 50/50 reference</span></div></article></div><div class="model-grid" id="modelGrid"><div class="empty-card">Models start after Research completes.</div></div></section>
+
+      <section class="view" id="view-evidence"><div class="view-intro"><div><div class="eyebrow">DATA PROVENANCE &amp; LIMITS</div><h2>Data &amp; evidence</h2><p>What Astra is training on, what each result means, and the assumptions that shape the replay.</p></div><div class="account-total">AUDITABLE</div></div><div class="evidence-grid"><article class="panel evidence-card"><div class="eyebrow">PHASE 01 · CARRY-FORWARD</div><h3>Research memory</h3><div class="evidence-number" id="researchResults">—</div><p>Historical backtest, chronological holdout, walk-forward, and cost-stress outputs remain source-separated. The previous evaluation is retained as context, not mixed into ML labels or summed into this phase’s P&amp;L.</p><div class="data-list" id="researchStatus"></div></article><article class="panel evidence-card"><div class="eyebrow">PHASE 02 · LOCAL SNAPSHOT</div><h3>FX training set</h3><div class="evidence-number" id="datasetRows">—</div><p id="datasetDetails">Loading manifest details…</p><div class="pill-row" id="datasetPills"></div></article><article class="panel evidence-card wide"><div class="eyebrow">ASSUMPTIONS &amp; CAUTIONS</div><h3>Read before interpreting results</h3><div class="warning-list" id="limitations"></div><div class="cost-notes"><div><small>STARTING BALANCE</small><b>$10,000 / test</b></div><div><small>TRADE RISK</small><b>0.5% / order</b></div><div><small>MODELED COST</small><b>1.0 pip spread · 0.2 pip slippage</b></div><div><small>LEVERAGE</small><b>Not modeled</b></div><div><small>EXECUTION</small><b>Paper, next available bar</b></div><div><small>QUOTE BASIS</small><b>BID bars; assumptions disclosed</b></div></div></article></div></section>
+
+      <footer class="footer"><span>ASTRA TRAINING ARENA</span><span>OFFLINE PAPER RESEARCH · NO BROKER ROUTES</span><span id="lastUpdate">Waiting for status…</span></footer>
+    </main>
+  </div>
+  <div id="toast" class="toast" role="status"></div>
+  <div id="tradeModal" class="modal-backdrop" hidden><section class="trade-modal" role="dialog" aria-modal="true" aria-labelledby="tradeModalTitle"><header><div><div class="eyebrow">PAPER TRADE RECORD</div><h2 id="tradeModalTitle">Trade details</h2></div><button id="tradeModalClose" class="modal-close" type="button" aria-label="Close trade details">×</button></header><div id="tradeModalBody" class="trade-detail-grid"></div></section></div>
+  <script src="/app.js"></script>
+</body>
+</html>

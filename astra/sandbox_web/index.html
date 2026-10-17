@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#101b18">
+    <title>Astra Research Desk</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script defer src="/app.js"></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="/" aria-label="Astra Research Desk home"><span class="brand-mark">A</span><span>ASTRA <small>RESEARCH DESK</small></span></a>
+      <div class="local-badge"><i></i> LOCAL · PAPER RESEARCH</div>
+    </header>
+    <main>
+      <section class="intro">
+        <div><p class="eyebrow">OFFLINE RESEARCH WORKSPACE</p><h1>Find the signal.<br><em>Respect the risk.</em></h1><p class="lede">Explore your candle history with Astra’s causal analysis, strategy arena, backtests and paper replay. Your datasets stay on this machine.</p></div>
+        <div class="intro-note"><a href="/research" target="_blank" rel="noopener">Open curated history results ↗</a><span>Historical OHLC research<br><strong>No broker connection</strong></span></div>
+      </section>
+
+      <div class="workspace">
+        <section class="panel import-panel">
+          <div class="panel-heading"><div><span class="step">01</span><h2>Bring your data</h2></div><span class="muted">CSV · candle close times</span></div>
+          <div id="drop-zone" class="drop-zone" tabindex="0" role="button" aria-label="Choose or drop a candle CSV">
+            <div class="upload-icon">↑</div><strong>Drop a CSV here, or <u>browse files</u></strong><span>timestamp, open, high, low, close, volume</span>
+            <input id="file-input" type="file" accept=".csv,text/csv" hidden>
+          </div>
+          <div class="form-row import-fields"><label>Pair<select id="pair"></select></label><label>Timeframe<select id="timeframe"></select></label><button id="import-button" class="button button-dark">Import candles <span>→</span></button></div>
+          <p id="notice" class="notice" role="status" aria-live="polite"></p>
+          <div id="datasets" class="dataset-list"></div>
+          <div id="preview" class="preview hidden"></div>
+        </section>
+
+        <section class="panel experiment-panel">
+          <div class="panel-heading"><div><span class="step">02</span><h2>Shape an experiment</h2></div><span class="muted">Same data, clear assumptions</span></div>
+          <label class="field-label" for="mode">Research mode</label>
+          <div class="mode-grid" id="mode-grid"></div>
+          <div class="strategy-heading"><span class="field-label">Strategies</span><span class="muted">Arena compares all selected</span></div>
+          <div id="strategies" class="strategy-list"></div>
+          <details class="settings"><summary>Risk, costs &amp; windows <span>Configure the assumptions</span></summary>
+            <div class="settings-grid">
+              <label>Starting equity<input name="equity" type="number" value="10000" min="1" step="100"></label>
+              <label>Risk per trade (%)<input name="risk_percent" type="number" value="0.5" min="0.01" max="1" step="0.05"></label>
+              <label>Spread (pips)<input name="spread_pips" type="number" value="1" min="0" step="0.1"></label>
+              <label>Slippage (pips)<input name="slippage_pips" type="number" value="0.2" min="0" step="0.1"></label>
+              <label>Commission / unit<input name="commission" type="number" value="0" min="0" step="0.01"></label>
+              <label>Value / price unit<input name="price_value" type="number" value="1" min="0.000001" step="0.1"></label>
+              <label>Max position units<input name="max_units" type="number" value="100000" min="0.000001" step="1000"></label>
+              <label>Max open positions<input name="max_positions" type="number" value="1" min="1" max="20" step="1"></label>
+              <label>Max drawdown (%)<input name="drawdown_percent" type="number" value="20" min="1" max="100" step="1"></label>
+              <label>Train window (candles)<input name="train_size" type="number" value="120" min="31" step="1"></label>
+              <label>Test window (candles)<input name="test_size" type="number" value="60" min="2" step="1"></label>
+              <label class="switch-label">Risk kill switch <input name="kill_switch" type="checkbox"><span class="switch"></span></label>
+            </div>
+          </details>
+          <button id="run-button" class="button button-accent" disabled>Run experiment <span>→</span></button>
+          <p class="fine-print">Backtests and paper replay model candle-level fills. Costs, data quality and OHLC path limits affect results. This is not a profitability guarantee.</p>
+        </section>
+      </div>
+
+      <section class="panel results-panel">
+        <div class="panel-heading"><div><span class="step">03</span><h2>Research log</h2></div><span id="run-count" class="muted"></span></div>
+        <div id="job-status" class="job-status hidden" role="status" aria-live="polite"></div>
+        <div id="results" class="results"><div class="empty-state"><span>◎</span><p>Your saved experiments will appear here.</p><small>Import candles to begin.</small></div></div>
+      </section>
+      <footer><span>ASTRA · RESEARCH &amp; PAPER EXECUTION</span><span>Built for careful experiments.</span></footer>
+    </main>
+    <dialog id="result-dialog"><form method="dialog"><button class="dialog-close" aria-label="Close">×</button></form><div id="result-detail"></div></dialog>
+  </body>
+</html>
